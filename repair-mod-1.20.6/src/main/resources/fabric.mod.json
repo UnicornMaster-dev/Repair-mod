@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "repair-mod",
+	"version": "${version}",
+	"name": "repair mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/repair-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.jackson.RepairMod"
+		],
+		"client": [
+			"net.jackson.RepairModClient"
+		]
+	},
+	"mixins": [
+		"repair-mod.mixins.json",
+		{
+			"config": "repair-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
